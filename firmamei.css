@@ -21,12 +21,12 @@
 
 .f-txt { 
   color: #a3a3a3; 
-  font-size: 12px;
+  font-size: 10px;
   transform: translateY(10px);
 }
 
 .f-tit { 
-  font-size: 20px; 
+  font-size: 22px; 
   letter-spacing: 2px; 
   transform: translateY(-10px);
   background: linear-gradient(to bottom, var(--g), #000000);
