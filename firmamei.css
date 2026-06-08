@@ -1,0 +1,122 @@
+@font-face { 
+  font-family: 'Mei'; 
+  src: url('https://cdn.jsdelivr.net/gh/Amethystaa/demigodmei@a9298b23ec615f0db28d780d2fbb8bcdf23706fb/Romans%20Story.ttf') format('truetype'); 
+}
+
+
+.firma-contenedor {
+  --g: #8c70a9; 
+  width: 350px; 
+  margin: 20px auto; 
+  text-align: center;
+  cursor: pointer;
+}
+
+
+.f-txt, .f-tit {
+  font-family: 'Mei', serif; 
+  opacity: 0; 
+  transition: all 0.6s ease; 
+}
+
+.f-txt { 
+  color: #a3a3a3; 
+  font-size: 14px;
+  transform: translateY(10px);
+}
+
+.f-tit { 
+  font-size: 25px; 
+  letter-spacing: 4px; 
+  transform: translateY(-10px);
+  background: linear-gradient(to bottom, var(--g), #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+
+.firma {
+  height: 250px; 
+  width: 100%;
+  margin: 10px 0; 
+  border: 5px solid var(--g);
+  position: relative; 
+  overflow: hidden;
+  box-sizing: border-box;
+  
+
+  background-image: url('https://i.imgur.com/CAqtbR3.png');
+  background-position: center top; 
+  background-size: cover; 
+  background-repeat: no-repeat;
+}
+
+
+.firma::before, .firma::after {
+  content: ""; 
+  position: absolute; 
+  inset: 0; 
+  pointer-events: none;
+}
+
+
+.firma::before {
+  background-image: url('https://i.imgur.com/cAjmiqI.gif');
+  background-position: center top; 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  
+  filter: grayscale(100%) brightness(0.6); 
+  opacity: 0; 
+  transition: opacity 0.8s ease; 
+  z-index: 1; 
+}
+
+
+.firma::after {
+  background: var(--g); 
+  opacity: 0; 
+  mix-blend-mode: multiply; 
+  transition: opacity 0.5s ease; 
+  z-index: 2; 
+}
+
+
+.f-ico { 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.2); 
+  font-size: 45px; 
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+  z-index: 3; 
+  opacity: 0; 
+  transition: all 0.5s ease;/
+}
+
+
+.firma-contenedor:hover .firma::before { 
+  opacity: 1; 
+  transition: opacity 0.65s ease;
+}
+.firma-contenedor:hover .firma::after { 
+  opacity: 0.85; 
+  transition: opacity 0.65s ease 0.75s; 
+}
+.firma-contenedor:hover .f-txt { 
+  opacity: 1; 
+  transform: translateY(0); 
+  transition: all 0.65s ease 0.1s; 
+}
+.firma-contenedor:hover .f-tit { 
+  opacity: 1; 
+  transform: translateY(0); 
+  transition: all 0.65s ease 0.4s; 
+}
+.firma-contenedor:hover .f-ico { 
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1); 
+  transition: all 0.65s ease 0.65s; 
+}
