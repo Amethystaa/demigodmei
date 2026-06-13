@@ -11,28 +11,52 @@
   font-weight: normal !important;
 }
 
-/* Contenedor del nuevo título */
-.titulo-rayo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 20px 0;
-  text-align: center;
-}
-
-/* Texto del título con animación */
+/* Texto del título independiente con animación (35px) */
 .titulo-glow {
   font-family: 'Switzerland', sans-serif;
-  font-size: 26px; /* Puedes ajustar el tamaño aquí */
+  font-size: 35px; 
+  font-weight: normal;
+  line-height: 1.2;
+  display: block; /* Lo hace independiente y le permite centrarse solo */
+  text-align: center;
+  margin: 15px 0; /* Espacio arriba y abajo */
   animation: titulo-rayo-anim 2.5s ease-in-out infinite alternate;
 }
 
-/* Ícono con parpadeo */
+/* Ícono independiente con parpadeo (45px) */
 .titulo-flicker {
   color: #ffffff;
-  font-size: 26px;
+  font-size: 45px; 
+  display: block; /* Lo hace independiente y le permite centrarse solo */
+  text-align: center;
+  margin: 15px 0; /* Espacio arriba y abajo */
   animation: titulo-flicker-anim 3s infinite;
+}
+
+/* --- KEYFRAMES --- */
+
+/* Animación: De color a blanco con brillo que barre en horizontal */
+@keyframes titulo-rayo-anim {
+  0% {
+    color: #4c7264;
+    text-shadow: -10px 0 5px #263932, -5px 0 10px #263932;
+  }
+  100% {
+    color: #ffffff;
+    text-shadow: 10px 0 8px #ffffff, 5px 0 15px #4c7264, 0 0 25px #4c7264, 0 0 40px #263932;
+  }
+}
+
+/* Parpadeo errático del ícono blanco */
+@keyframes titulo-flicker-anim {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
+  }
+  20%, 24%, 55% {
+    opacity: 0.3;
+    filter: none;
+  }
 }
 
 /* --- KEYFRAMES DEL TÍTULO --- */
