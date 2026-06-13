@@ -11,69 +11,45 @@
   font-weight: normal !important;
 }
 
-/* Texto del título independiente con animación (35px) */
+/* Texto del título independiente (35px) */
 .titulo-glow {
   font-family: 'Switzerland', sans-serif;
   font-size: 35px; 
   font-weight: normal;
   line-height: 1.2;
-  display: block; /* Lo hace independiente y le permite centrarse solo */
+  display: block; 
   text-align: center;
-  margin: 15px 0; /* Espacio arriba y abajo */
+  margin: 15px 0; 
   animation: titulo-rayo-anim 2.5s ease-in-out infinite alternate;
 }
 
-/* Ícono independiente con parpadeo (45px) */
+/* Ícono independiente (45px) */
 .titulo-flicker {
   color: #ffffff;
   font-size: 45px; 
-  display: block; /* Lo hace independiente y le permite centrarse solo */
+  display: block; 
   text-align: center;
-  margin: 15px 0; /* Espacio arriba y abajo */
+  margin: 15px 0; 
   animation: titulo-flicker-anim 3s infinite;
 }
 
-/* --- KEYFRAMES --- */
+/* --- KEYFRAMES CORREGIDOS --- */
 
-/* Animación: De color a blanco con brillo que barre en horizontal */
+/* Animación: El color cambia a blanco y la luz CRECE desde el centro (sin moverse a los lados) */
 @keyframes titulo-rayo-anim {
   0% {
     color: #4c7264;
-    text-shadow: -10px 0 5px #263932, -5px 0 10px #263932;
+    /* Sombra pequeña y centrada */
+    text-shadow: 0 0 5px #263932, 0 0 10px #263932;
   }
   100% {
     color: #ffffff;
-    text-shadow: 10px 0 8px #ffffff, 5px 0 15px #4c7264, 0 0 25px #4c7264, 0 0 40px #263932;
+    /* Sombra grande y centrada (crea el efecto de que el brillo crece) */
+    text-shadow: 0 0 8px #ffffff, 0 0 15px #4c7264, 0 0 25px #4c7264, 0 0 40px #263932;
   }
 }
 
 /* Parpadeo errático del ícono blanco */
-@keyframes titulo-flicker-anim {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
-    opacity: 1;
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
-  }
-  20%, 24%, 55% {
-    opacity: 0.3;
-    filter: none;
-  }
-}
-
-/* --- KEYFRAMES DEL TÍTULO --- */
-
-/* Animación: De color a blanco con brillo que se desplaza horizontalmente */
-@keyframes titulo-rayo-anim {
-  0% {
-    color: #4c7264;
-    text-shadow: -10px 0 5px #263932, -5px 0 10px #263932;
-  }
-  100% {
-    color: #ffffff;
-    text-shadow: 10px 0 8px #ffffff, 5px 0 15px #4c7264, 0 0 25px #4c7264, 0 0 40px #263932;
-  }
-}
-
-/* Parpadeo del ícono */
 @keyframes titulo-flicker-anim {
   0%, 18%, 22%, 25%, 53%, 57%, 100% {
     opacity: 1;
